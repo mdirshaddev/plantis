@@ -13,7 +13,7 @@ SECRET_KEY = 'nlsfpn_*m&9kh-a3ur6b8qao2$z14&(*x)+@fn8x!4n-d+)ji1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['nursery-webapp.herokuapp.com']
 
 
 # Application definition
