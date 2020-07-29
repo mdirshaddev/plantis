@@ -34,6 +34,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', # Django whitenoise config
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -128,9 +129,9 @@ if os.getcwd() == '/app':
     DATABASES['default'].update(db_from_env)
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     #Allow all host headers
-    ALLOWED_HOSTS = ['backend.herokuapp.com']
+    ALLOWED_HOSTS = ['nursery-webapp.herokuapp.com']
     DEBUG=True
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     STATICFILES_DIRS=(
-        os.path.join(BASE_DIR, 'static')
+        os.path.join(BASE_DIR, 'frontend/build/static')
     )
