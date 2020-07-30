@@ -13,7 +13,7 @@ SECRET_KEY = 'nlsfpn_*m&9kh-a3ur6b8qao2$z14&(*x)+@fn8x!4n-d+)ji1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['nursery-webapp.herokuapp.com']
+ALLOWED_HOSTS = ['nursery-webapp.herokuapp.com','localhost','127.0.0.1']
 
 
 # Application definition
@@ -49,7 +49,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'frontend/build')
+            os.path.join(BASE_DIR, 'build')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -116,10 +116,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'frontend/build/static'),
+    os.path.join(BASE_DIR, 'build/static'),
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'frontend/build/static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Cors related
 CORS_ORIGIN_ALLOW_ALL=True
@@ -135,5 +135,5 @@ if os.getcwd() == '/':
     DEBUG=True
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     STATICFILES_DIRS=(
-        os.path.join(BASE_DIR, 'frontend/build/static')
+        os.path.join(BASE_DIR, 'build/static')
     )
