@@ -73,7 +73,10 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME':  os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': 'dbfk83444urmhe',
+        'USER': 'ednmnildjpoosp',
+        'PASSWORD': '07e9c70f405de05f1cdae525b2cf7d0c323ca824af2effb2eb1a0d306d0335e7',
+        'HOST': 'ec2-18-235-109-97.compute-1.amazonaws.com',
     }
 }
 
@@ -129,16 +132,3 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Cors related
 CORS_ORIGIN_ALLOW_ALL=True
 
-# # heroku settings
-# if os.getcwd() == '/':
-#     import dj_database_url
-#     db_from_env = dj_database_url.config(conn_max_age=500)
-#     DATABASES['default'].update(db_from_env)
-#     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-#     #Allow all host headers
-#     ALLOWED_HOSTS = ['nursery-webapp.herokuapp.com']
-#     DEBUG=True
-#     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-#     STATICFILES_DIRS=(
-#         os.path.join(BASE_DIR, 'build/static')
-#     )
