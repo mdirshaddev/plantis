@@ -12,7 +12,7 @@ SECRET_KEY = 'i!8kvn0lia3edmgjo9w*i3!=$=fvxy+%y&$y*(m7gb7#n^6^b_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ['nursery-webapp.herokuapp.com','localhost','127.0.0.1']
+ALLOWED_HOSTS = ['nursery-webapp.herokuapp.com','localhost','127.0.0.1']
 
 
 # Application definition
