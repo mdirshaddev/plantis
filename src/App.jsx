@@ -27,7 +27,7 @@ class App extends React.Component {
     formdata.append('description', this.state.description)
     formdata.append('plantprice', this.state.plantprice)
     formdata.append('plantimage', this.state.plantimage)
-    axios.post('http://localhost:8000/app/api/plants/',formdata,{
+    axios.post('/app/api/plants/',formdata,{
       headers: {
         'Content-Type': 'multipart/form-data',
         'Accept': 'application/json'
