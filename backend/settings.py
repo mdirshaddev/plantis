@@ -73,13 +73,6 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'NurseryDjangoApp',
-        'USER': 'postgres',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',
-    },
-    'production': {
-        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'dbfk83444urmhe',
         'USER': 'ednmnildjpoosp',
         'PASSWORD': '07e9c70f405de05f1cdae525b2cf7d0c323ca824af2effb2eb1a0d306d0335e7',
@@ -143,7 +136,7 @@ CORS_ORIGIN_ALLOW_ALL=True
 if os.getcwd() == '/':
     import dj_database_url
     db_from_env = dj_database_url.config(conn_max_age=500)
-    DATABASES['production'].update(db_from_env)
+    DATABASES['default'].update(db_from_env)
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     #Allow all host headers
     ALLOWED_HOSTS = ['nursery-webapp.herokuapp.com']
