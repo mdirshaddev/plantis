@@ -7,10 +7,10 @@ from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
 from .serializers import PlantSerializer
 from ..models import Plant
+from django.views.generic import CreateView
 
 class PlantViews(APIView):
     serializer_class = PlantSerializer
-
     def get(self, request):
         data = Plant.objects.all()
         print(data)
