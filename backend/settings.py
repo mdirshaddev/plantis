@@ -72,11 +72,8 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # For running locally
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dbfk83444urmhe',
-        'USER': 'ednmnildjpoosp',
-        'PASSWORD': '07e9c70f405de05f1cdae525b2cf7d0c323ca824af2effb2eb1a0d306d0335e7',
-        'HOST': 'ec2-18-235-109-97.compute-1.amazonaws.com',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME':  os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
