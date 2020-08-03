@@ -83,10 +83,10 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'NurseryDjangoApp',
-        'USER': 'postgres',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',
+        'NAME': 'dkuugr1e00369',
+        'USER': 'dgbejizjbmqght',
+        'PASSWORD': 'd91a032bb3b75201931a074d5fbe756e656b7913ab4aa4ee2580dc426f9fa5fa',
+        'HOST': 'ec2-50-16-198-4.compute-1.amazonaws.com',
     }
 }
 
