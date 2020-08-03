@@ -82,6 +82,10 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # For running locally
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    },
+    'local': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'dkuugr1e00369',
         'USER': 'dgbejizjbmqght',
@@ -150,7 +154,7 @@ CORS_ORIGIN_ALLOW_ALL=True
 if os.getcwd() == '/':
     import dj_database_url
     db_from_env = dj_database_url.config(conn_max_age=500)
-    DATABASES['default'].update(db_from_env)
+    DATABASES['local'].update(db_from_env)
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     #Allow all host headers
     ALLOWED_HOSTS = ['nursery-webapp.herokuapp.com']
