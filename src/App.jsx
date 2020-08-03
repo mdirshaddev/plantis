@@ -19,7 +19,7 @@ class App extends React.Component {
       plantimage: null
     }
   }
-  Submit(e){
+  Submit = async (e) => {
     e.preventDefault();
     const formdata = new FormData();
     formdata.append('fullname', this.state.fullname)
@@ -27,13 +27,15 @@ class App extends React.Component {
     formdata.append('description', this.state.description)
     formdata.append('plantprice', this.state.plantprice)
     formdata.append('plantimage', this.state.plantimage)
-    axios.post('/app/api/plants/',formdata,{
+    axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
+    axios.defaults.xsrfCookieName = "csrftoken";
+    await axios.post('http://localhost:8000/app/api/plants/',formdata,{
       headers: {
         'Content-Type': 'multipart/form-data',
         'Accept': 'application/json'
       }
     }).then(res => console.log(res)).catch(err=> console.log(err))
-    window.location='/'
+    window.location = '/';
   }
   onChangefullname(e){
     this.setState({

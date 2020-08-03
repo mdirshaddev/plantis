@@ -7,7 +7,6 @@ from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
 from .serializers import PlantSerializer
 from ..models import Plant
-from django.views.generic import CreateView
 
 class PlantViews(APIView):
     serializer_class = PlantSerializer
@@ -20,9 +19,11 @@ class PlantViews(APIView):
     def post(self, request):
         data = request.data
         print(data)
-        serializer = PlantSerializer(data=data)
-        if serializer.is_valid():
-            plant_data = serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        else:
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        try:
+            serializer = PlantSerializer(data=data)
+            if serializer.is_valid():
+                plant_data = serializer.save()
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
+        except Exception as e:
+            return Response(e, status=status.HTTP_400_BAD_REQUEST)    
+        

@@ -10,7 +10,7 @@ class Plant(models.Model):
     plantname = models.CharField(max_length=255, null=False, blank=False)
     description = models.TextField()
     plantprice = models.FloatField(default=0)
-    plantimage = models.ImageField(default='default.jpeg', upload_to='plants')
+    plantimage = models.ImageField(default='default.jpg', upload_to='plants')
 
     def __str__(self):
         return self.fullname
